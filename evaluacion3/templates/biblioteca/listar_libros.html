@@ -1,0 +1,31 @@
+{% extends 'biblioteca/base.html' %}
+
+{% block content %}
+<a href="{% url 'agregar_libro' %}" class="btn btn-primary mb-2">Agregar Libro</a>
+<h2>Listado de Libros</h2>
+<table id="tabla-libros" class="table table-striped">
+    <thead>
+        <tr>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Editorial</th>
+            <th>Año de Publicación</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for libro in libros %}
+        <tr>
+            <td>{{ libro.titulo }}</td>
+            <td>{{ libro.autor }}</td>
+            <td>{{ libro.editorial }}</td>
+            <td>{{ libro.anio_publicacion }}</td>
+            <td>
+                <a href="{% url 'editar_libro' pk=libro.pk %} " class="btn btn-primary mb-2">Editar</a>
+                <a href="{% url 'eliminar_libro' pk=libro.pk %}" class="btn btn-danger mb-2">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+      <!-- Bootstrap CSS desde CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!-- DataTables CSS desde CDN -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.8/css/dataTables.bootstrap5.min.css">
+
+  <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap JS desde CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+  <!-- DataTables JS desde CDN -->
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.8/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.8/js/dataTables.bootstrap5.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        
+       <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="mt-5">Inicio de sesión</h2>
+            <hr>
+            <form name="frm_login" method="post">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="txt_usuario" class="form-label">Usuario</label>
+                    <input type="text" name="txt_usuario" id="txt_usuario" class="form-control" placeholder="Ingrese su usuario">
+                </div>
+                <div class="mb-3">
+                    <label for="txt_contrasena" class="form-label">Contraseña</label>
+                    <input type="password" name="txt_contrasena" id="txt_contrasena" class="form-control" placeholder="Ingrese su contraseña">
+                </div>
+                <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+            </form>
+
+        </div>
+       </div>
+
+
+    </div>
+</body>
+</html>
